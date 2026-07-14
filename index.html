@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Grace Sania Silalahi | Portfolio</title>
+    <meta
+      name="description"
+      content="Portofolio Grace Sania Silalahi — UI/UX Designer & Full-Stack Developer berbasis di Medan, Indonesia."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-color: #f8fafc;
+        --card-bg: #ffffff;
+        --primary: #5ec2b4; /* Soft Mint */
+        --primary-dark: #4aa89c;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --accent-soft: #f1f5f9;
+        --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        --transition: all 0.3s ease;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        line-height: 1.6;
+        scroll-behavior: smooth;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      /* Navbar */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 1.2rem;
+        letter-spacing: -0.5px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-main);
+        margin-left: 2rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 160px 0 100px;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+      }
+      .hero-text {
+        flex: 1;
+      }
+      .hero-label {
+        display: inline-block;
+        padding: 6px 16px;
+        background: var(--accent-soft);
+        border-radius: 100px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--primary-dark);
+        margin-bottom: 1.5rem;
+      }
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+      }
+      .hero h1 em {
+        color: var(--primary);
+        font-style: italic;
+      }
+      .hero p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+        max-width: 600px;
+      }
+
+      .hero-img-container {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .profile-wrapper {
+        position: relative;
+        width: 350px;
+        height: 450px;
+        background: var(--accent-soft);
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* General Section Styling */
+      section {
+        padding: 80px 0;
+      }
+      .section-header {
+        margin-bottom: 3rem;
+      }
+      .tag {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: var(--primary);
+        letter-spacing: 2px;
+      }
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        margin-top: 0.5rem;
+      }
+
+      /* Cards */
+      .card {
+        background: var(--card-bg);
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        transition: var(--transition);
+      }
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Project Grid */
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      .project-card {
+        display: flex;
+        flex-direction: column;
+      }
+      .project-thumb {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--accent-soft);
+        margin-bottom: 1rem;
+      }
+      .project-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: var(--transition);
+      }
+      .project-card:hover .project-thumb img {
+        transform: scale(1.05);
+      }
+      .project-thumb.placeholder {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+      }
+      .project-info h3 {
+        margin: 1rem 0 0.5rem;
+        font-size: 1.25rem;
+      }
+      .project-info p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin-bottom: 1rem;
+      }
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tech-tags span {
+        background: var(--accent-soft);
+        font-size: 0.75rem;
+        padding: 4px 12px;
+        border-radius: 100px;
+        color: var(--text-muted);
+      }
+
+      /* Skills */
+      .skill-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .skill-badge {
+        background: white;
+        border: 1px solid #e2e8f0;
+        padding: 10px 20px;
+        border-radius: 12px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      /* Achievements */
+      .achieve-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+      .achieve-item {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .achieve-icon {
+        font-size: 1.5rem;
+        background: var(--accent-soft);
+        padding: 15px;
+        border-radius: 15px;
+      }
+
+      /* Contact Footer */
+      .footer {
+        background: #1e293b;
+        color: white;
+        padding: 60px 0 30px;
+        margin-top: 50px;
+      }
+      .contact-links {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-bottom: 40px;
+      }
+      .contact-box h4 {
+        font-size: 0.8rem;
+        color: #94a3b8;
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+      }
+      .contact-box p {
+        font-size: 1rem;
+      }
+      .contact-box a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .contact-box a:hover {
+        color: var(--primary);
+      }
+      .copyright {
+        border-top: 1px solid #334155;
+        padding-top: 20px;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.8rem;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+          padding-top: 120px;
+        }
+        .hero-img-container {
+          order: -1;
+          justify-content: center;
+        }
+        .project-grid,
+        .achieve-list,
+        .contact-links {
+          grid-template-columns: 1fr;
+        }
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container nav-content">
+        <div class="logo">GS.</div>
+        <div class="nav-links">
+          <a href="#about">Tentang</a>
+          <a href="#experience">Pengalaman</a>
+          <a href="#projects">Proyek</a>
+          <a href="#skills">Keahlian</a>
+          <a
+            href="#contact"
+            style="
+              background: var(--primary);
+              color: white;
+              padding: 10px 20px;
+              border-radius: 10px;
+            "
+            >Kontak</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <section class="hero">
+        <div class="hero-text">
+          <span class="hero-label">UI/UX Designer & Full-Stack Developer</span>
+          <h1>Grace Sania<br /><em>Silalahi</em></h1>
+          <p>
+            Mahasiswi Informatika di Institut Teknologi Del yang merancang
+            antarmuka yang intuitif sekaligus membangun sistem web dan mobile
+            yang andal — menjembatani desain dan pengembangan dalam satu alur
+            kerja yang utuh.
+          </p>
+          <div
+            class="contact-meta"
+            style="color: var(--text-muted); font-size: 0.9rem"
+          >
+            📍 Medan, Indonesia
+          </div>
+        </div>
+        <div class="hero-img-container">
+          <div class="profile-wrapper">
+            <img
+              src="./foto-penulis.jpg"
+              alt="Grace Sania Silalahi"
+              class="profile-img"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="card">
+          <span class="tag">Profil Profesional</span>
+          <h2 class="section-title">Sekilas Tentang Saya</h2>
+          <p
+            style="
+              margin-top: 1.5rem;
+              color: var(--text-muted);
+              font-size: 1.1rem;
+            "
+          >
+            Saya berpengalaman merancang antarmuka yang berpusat pada
+            pengguna menggunakan <strong>Figma</strong>, lalu
+            mengimplementasikannya menjadi aplikasi yang skalabel dengan
+            <strong>Laravel, Kotlin, dan PostgreSQL</strong>. Kombinasi ini
+            memungkinkan saya memimpin alur kerja kolaboratif yang
+            menghubungkan estetika front-end dengan integrasi sistem yang
+            solid di belakangnya.
+          </p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <div class="section-header">
+          <span class="tag">Rekam Jejak</span>
+          <h2 class="section-title">Edukasi & Organisasi</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem">
+          <div class="card">
+            <h4 style="color: var(--primary); margin-bottom: 1rem">
+              Pendidikan
+            </h4>
+            <h3 style="font-size: 1.1rem">Institut Teknologi Del</h3>
+            <p
+              class="muted"
+              style="font-size: 0.85rem; color: var(--text-muted)"
+            >
+              S1 Informatika | 2023 – 2027 (Diharapkan)
+            </p>
+          </div>
+          <div class="card">
+            <h4 style="color: var(--primary); margin-bottom: 1rem">
+              Pengalaman Terbaru
+            </h4>
+            <h3 style="font-size: 1.1rem">Staff Departemen Kominfo</h3>
+            <p
+              class="muted"
+              style="font-size: 0.85rem; color: var(--text-muted)"
+            >
+              IT Del | 2024 – Sekarang
+            </p>
+            <ul
+              style="
+                font-size: 0.85rem;
+                margin-top: 10px;
+                padding-left: 15px;
+                color: var(--text-muted);
+              "
+            >
+              <li>Mengelola konten media sosial dan desain visual di Figma.</li>
+              <li>
+                Berkolaborasi lintas departemen untuk mendukung program kerja
+                himpunan.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="section-header">
+          <span class="tag">Karya Terpilih</span>
+          <h2 class="section-title">Studi Kasus Proyek</h2>
+        </div>
+        <div class="project-grid">
+          <div class="project-card">
+            <div class="card" style="padding: 1.5rem">
+              <div class="project-thumb">
+                <img src="./foto-project1.jpg" alt="Sistem Informasi SMK Negeri 3 Balige" />
+              </div>
+              <div class="project-info">
+                <span
+                  style="
+                    color: var(--primary);
+                    font-weight: 700;
+                    font-size: 0.8rem;
+                  "
+                  >2026</span
+                >
+                <h3>Sistem Informasi SMK Negeri 3 Balige</h3>
+                <p>
+                  Memimpin desain UI/UX dan berkolaborasi dalam pengembangan
+                  full-stack untuk sistem informasi sekolah yang terintegrasi.
+                </p>
+                <div class="tech-tags">
+                  <span>Figma</span><span>Vite</span><span>PostgreSQL</span
+                  ><span>SRS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="card" style="padding: 1.5rem">
+              <div class="project-thumb">
+                <img src="./foto-project2.jpg" alt="Sistem Pengajuan Dana Seminar" />
+              </div>
+              <div class="project-info">
+                <span
+                  style="
+                    color: var(--primary);
+                    font-weight: 700;
+                    font-size: 0.8rem;
+                  "
+                  >2026</span
+                >
+                <h3>Sistem Pengajuan Dana Seminar</h3>
+                <p>
+                  Mendigitalisasi proses pengajuan dana seminar melalui alur
+                  kerja berbasis peran (role-based workflow) yang efisien.
+                </p>
+                <div class="tech-tags">
+                  <span>Laravel</span><span>Figma</span
+                  ><span>Integrasi API</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="card" style="padding: 1.5rem">
+              <div class="project-thumb">
+                <img src="./foto-project3.jpg" alt="Aplikasi Web Interaktif (PABWE)" />
+              </div>
+              <div class="project-info">
+                <span
+                  style="
+                    color: var(--primary);
+                    font-weight: 700;
+                    font-size: 0.8rem;
+                  "
+                  >2025</span
+                >
+                <h3>Aplikasi Web Interaktif (PABWE)</h3>
+                <p>
+                  Mengembangkan modul "Posts" yang dinamis dengan fokus pada
+                  manajemen konten yang mulus dan responsif.
+                </p>
+                <div class="tech-tags">
+                  <span>React.js</span><span>Bun</span
+                  ><span>State Management</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div class="card" style="padding: 1.5rem">
+              <div class="project-thumb placeholder">🏠</div>
+              <div class="project-info">
+                <span
+                  style="
+                    color: var(--primary);
+                    font-weight: 700;
+                    font-size: 0.8rem;
+                  "
+                  >2025</span
+                >
+                <h3>SmartLiving Assistant</h3>
+                <p>
+                  Merancang prototipe rumah pintar yang inklusif, mendukung
+                  kontrol berbasis suara (voice) dan gestur (gesture).
+                </p>
+                <div class="tech-tags">
+                  <span>UX Research</span><span>Accessibility</span
+                  ><span>Figma</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <span class="tag">Prestasi</span>
+          <h2 class="section-title">Pencapaian Nasional</h2>
+        </div>
+        <div class="achieve-list">
+          <div class="achieve-item card">
+            <div class="achieve-icon">🥇</div>
+            <div>
+              <h4 style="font-size: 1rem">Medali Emas OPSI</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted)">
+                Divisi Matematika | Februari 2026
+              </p>
+            </div>
+          </div>
+          <div class="achieve-item card">
+            <div class="achieve-icon">📝</div>
+            <div>
+              <h4 style="font-size: 1rem">Finalis Kompetisi Esai</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted)">
+                Kategori Teknologi | Februari 2026
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-header">
+          <span class="tag">Keahlian</span>
+          <h2 class="section-title">Teknologi & Kompetensi</h2>
+        </div>
+        <div class="skill-group">
+          <div class="skill-badge">🎨 Figma</div>
+          <div class="skill-badge">⚛️ React.js</div>
+          <div class="skill-badge">🐘 Laravel</div>
+          <div class="skill-badge">📱 Kotlin</div>
+          <div class="skill-badge">🗄️ PostgreSQL</div>
+          <div class="skill-badge">🐍 Python</div>
+          <div class="skill-badge">🔗 Postman API</div>
+          <div class="skill-badge">λ Haskell & C</div>
+          <div class="skill-badge">⚡ JavaScript</div>
+          <div class="skill-badge" style="border-color: var(--primary)">
+            🇬🇧 Bahasa Inggris (Intermediate)
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer" id="contact">
+      <div class="container">
+        <div class="contact-links">
+          <div class="contact-box">
+            <h4>Email</h4>
+            <p><a href="mailto:grcsania23@gmail.com">grcsania23@gmail.com</a></p>
+          </div>
+          <div class="contact-box">
+            <h4>Telepon</h4>
+            <p><a href="tel:+6283165299640">+62 831 6529 9640</a></p>
+          </div>
+          <div class="contact-box">
+            <h4>LinkedIn</h4>
+            <p>
+              <a
+                href="https://linkedin.com/in/gracesaniasilalahi"
+                target="_blank"
+                rel="noopener"
+                >gracesaniasilalahi</a
+              >
+            </p>
+          </div>
+          <div class="contact-box">
+            <h4>GitHub</h4>
+            <p>
+              <a
+                href="https://github.com/Gracesilalahi"
+                target="_blank"
+                rel="noopener"
+                >Gracesilalahi</a
+              >
+            </p>
+          </div>
+        </div>
+        <div class="copyright">
+          © 2026 Grace Sania Silalahi. Dibuat dengan dedikasi di Medan,
+          Indonesia.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
