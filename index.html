@@ -3,640 +3,696 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Grace Sania Silalahi | Portfolio</title>
+    <title>
+      Grace Sania Silalahi — Informatics Student &amp; QA / Technical
+      Documentation
+    </title>
     <meta
       name="description"
-      content="Portofolio Grace Sania Silalahi — UI/UX Designer & Full-Stack Developer berbasis di Medan, Indonesia."
+      content="Portofolio Grace Sania Silalahi — mahasiswi Informatika Institut Teknologi Del, Technical Writer & QA Intern di Zicare, dengan fokus analisis FSD/SRS, quality assurance, dan pengembangan sistem full-stack."
     />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,600;1,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <style>
-      :root {
-        --bg-color: #f8fafc;
-        --card-bg: #ffffff;
-        --primary: #5ec2b4; /* Soft Mint */
-        --primary-dark: #4aa89c;
-        --text-main: #1e293b;
-        --text-muted: #64748b;
-        --accent-soft: #f1f5f9;
-        --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-        --transition: all 0.3s ease;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body {
-        font-family: "Plus Jakarta Sans", sans-serif;
-        background-color: var(--bg-color);
-        color: var(--text-main);
-        line-height: 1.6;
-        scroll-behavior: smooth;
-      }
-
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      /* Navbar */
-      nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1000;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-      }
-      .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 70px;
-      }
-      .logo {
-        font-weight: 700;
-        font-size: 1.2rem;
-        letter-spacing: -0.5px;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: var(--text-main);
-        margin-left: 2rem;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: var(--transition);
-      }
-      .nav-links a:hover {
-        color: var(--primary);
-      }
-
-      /* Hero Section */
-      .hero {
-        padding: 160px 0 100px;
-        display: flex;
-        align-items: center;
-        gap: 4rem;
-      }
-      .hero-text {
-        flex: 1;
-      }
-      .hero-label {
-        display: inline-block;
-        padding: 6px 16px;
-        background: var(--accent-soft);
-        border-radius: 100px;
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: var(--primary-dark);
-        margin-bottom: 1.5rem;
-      }
-      .hero h1 {
-        font-family: "Playfair Display", serif;
-        font-size: 3.5rem;
-        line-height: 1.1;
-        margin-bottom: 1.5rem;
-      }
-      .hero h1 em {
-        color: var(--primary);
-        font-style: italic;
-      }
-      .hero p {
-        font-size: 1.1rem;
-        color: var(--text-muted);
-        margin-bottom: 2rem;
-        max-width: 600px;
-      }
-
-      .hero-img-container {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-      }
-      .profile-wrapper {
-        position: relative;
-        width: 350px;
-        height: 450px;
-        background: var(--accent-soft);
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-      }
-      .profile-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      /* General Section Styling */
-      section {
-        padding: 80px 0;
-      }
-      .section-header {
-        margin-bottom: 3rem;
-      }
-      .tag {
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: var(--primary);
-        letter-spacing: 2px;
-      }
-      .section-title {
-        font-family: "Playfair Display", serif;
-        font-size: 2.5rem;
-        margin-top: 0.5rem;
-      }
-
-      /* Cards */
-      .card {
-        background: var(--card-bg);
-        border-radius: 20px;
-        padding: 2.5rem;
-        box-shadow: var(--shadow);
-        border: 1px solid rgba(0, 0, 0, 0.02);
-        transition: var(--transition);
-      }
-      .card:hover {
-        transform: translateY(-5px);
-      }
-
-      /* Project Grid */
-      .project-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-      }
-      .project-card {
-        display: flex;
-        flex-direction: column;
-      }
-      .project-thumb {
-        width: 100%;
-        aspect-ratio: 16 / 10;
-        border-radius: 12px;
-        overflow: hidden;
-        background: var(--accent-soft);
-        margin-bottom: 1rem;
-      }
-      .project-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-        transition: var(--transition);
-      }
-      .project-card:hover .project-thumb img {
-        transform: scale(1.05);
-      }
-      .project-thumb.placeholder {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-      }
-      .project-info h3 {
-        margin: 1rem 0 0.5rem;
-        font-size: 1.25rem;
-      }
-      .project-info p {
-        font-size: 0.9rem;
-        color: var(--text-muted);
-        margin-bottom: 1rem;
-      }
-      .tech-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-      .tech-tags span {
-        background: var(--accent-soft);
-        font-size: 0.75rem;
-        padding: 4px 12px;
-        border-radius: 100px;
-        color: var(--text-muted);
-      }
-
-      /* Skills */
-      .skill-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-      .skill-badge {
-        background: white;
-        border: 1px solid #e2e8f0;
-        padding: 10px 20px;
-        border-radius: 12px;
-        font-weight: 500;
-        font-size: 0.9rem;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
-
-      /* Achievements */
-      .achieve-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-      }
-      .achieve-item {
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-      }
-      .achieve-icon {
-        font-size: 1.5rem;
-        background: var(--accent-soft);
-        padding: 15px;
-        border-radius: 15px;
-      }
-
-      /* Contact Footer */
-      .footer {
-        background: #1e293b;
-        color: white;
-        padding: 60px 0 30px;
-        margin-top: 50px;
-      }
-      .contact-links {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 2rem;
-        margin-bottom: 40px;
-      }
-      .contact-box h4 {
-        font-size: 0.8rem;
-        color: #94a3b8;
-        text-transform: uppercase;
-        margin-bottom: 0.5rem;
-      }
-      .contact-box p {
-        font-size: 1rem;
-      }
-      .contact-box a {
-        color: inherit;
-        text-decoration: none;
-      }
-      .contact-box a:hover {
-        color: var(--primary);
-      }
-      .copyright {
-        border-top: 1px solid #334155;
-        padding-top: 20px;
-        text-align: center;
-        color: #64748b;
-        font-size: 0.8rem;
-      }
-
-      @media (max-width: 768px) {
-        .hero {
-          flex-direction: column;
-          text-align: center;
-          padding-top: 120px;
-        }
-        .hero-img-container {
-          order: -1;
-          justify-content: center;
-        }
-        .project-grid,
-        .achieve-list,
-        .contact-links {
-          grid-template-columns: 1fr;
-        }
-        .hero h1 {
-          font-size: 2.5rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- ============ DOCUMENT METADATA BAR ============ -->
+    <div class="docbar">
+      <div class="container">
+        <span
+          ><span class="doc-id">DOC/PORTFOLIO-GSS</span>
+          <span class="doc-hide-sm">· Rev. 4.0</span></span
+        >
+        <span class="doc-hide-sm">Prepared for: Reviewer</span>
+        <span class="doc-status">STATUS: ACTIVELY MAINTAINED</span>
+      </div>
+    </div>
+
+    <!-- ============ NAV ============ -->
     <nav>
       <div class="container nav-content">
-        <div class="logo">GS.</div>
+        <div class="logo">GS<span>.</span></div>
+        <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <div class="nav-links">
-          <a href="#about">Tentang</a>
-          <a href="#experience">Pengalaman</a>
-          <a href="#projects">Proyek</a>
-          <a href="#skills">Keahlian</a>
-          <a
-            href="#contact"
-            style="
-              background: var(--primary);
-              color: white;
-              padding: 10px 20px;
-              border-radius: 10px;
-            "
-            >Kontak</a
+          <a href="#about"><span class="num">§01</span>Profil</a>
+          <a href="#experience"><span class="num">§02</span>Pengalaman</a>
+          <a href="#projects"><span class="num">§03</span>Proyek</a>
+          <a href="#skills"><span class="num">§04</span>Keahlian</a>
+          <a href="#achievements"><span class="num">§05</span>Prestasi</a>
+          <a href="#contact" class="nav-cta"
+            ><span class="num">§06</span>Kontak</a
           >
         </div>
       </div>
     </nav>
 
+    <!-- ============ HERO ============ -->
     <div class="container">
-      <section class="hero">
+      <section class="hero" style="border-top: none">
         <div class="hero-text">
-          <span class="hero-label">UI/UX Designer & Full-Stack Developer</span>
+          <div class="eyebrow">
+            Informatics Student · QA &amp; Technical Documentation
+          </div>
           <h1>Grace Sania<br /><em>Silalahi</em></h1>
-          <p>
-            Mahasiswi Informatika di Institut Teknologi Del yang merancang
-            antarmuka yang intuitif sekaligus membangun sistem web dan mobile
-            yang andal — menjembatani desain dan pengembangan dalam satu alur
-            kerja yang utuh.
+          <div class="role-line">
+            Technical Writer &amp; QA Intern @ Zicare · Full-Stack Contributor
+          </div>
+          <p class="lede">
+            Mahasiswi Informatika di Institut Teknologi Del yang terbiasa
+            membaca sistem dari dua sisi sekaligus: sebagai spesifikasi
+            (FSD/SRS) dan sebagai kode yang berjalan. Fokus saya adalah
+            memastikan keduanya benar-benar selaras — melalui quality assurance
+            yang teliti, dokumentasi teknis yang jelas, dan kontribusi langsung
+            dalam pengembangan full-stack.
           </p>
-          <div
-            class="contact-meta"
-            style="color: var(--text-muted); font-size: 0.9rem"
-          >
-            📍 Medan, Indonesia
+          <div class="hero-tags">
+            <span class="htag">FSD / SRS Analysis</span>
+            <span class="htag">Quality Assurance</span>
+            <span class="htag">UAT Testing</span>
+            <span class="htag">Full-Stack Development</span>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">Lihat Proyek →</a>
+            <a class="btn btn-ghost" href="mailto:gracesania9@gmail.com"
+              >Kirim Email</a
+            >
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/Gracesilalahi"
+              target="_blank"
+              rel="noopener"
+              >GitHub ↗</a
+            >
           </div>
         </div>
-        <div class="hero-img-container">
-          <div class="profile-wrapper">
+        <div class="hero-fig">
+          <div class="fig-frame marks">
             <img
-              src="./foto-penulis.jpg"
-              alt="Grace Sania Silalahi"
-              class="profile-img"
+              src="./assets/foto-penulis.jpg"
+              alt="Foto Grace Sania Silalahi"
             />
-          </div>
-        </div>
-      </section>
-
-      <section id="about">
-        <div class="card">
-          <span class="tag">Profil Profesional</span>
-          <h2 class="section-title">Sekilas Tentang Saya</h2>
-          <p
-            style="
-              margin-top: 1.5rem;
-              color: var(--text-muted);
-              font-size: 1.1rem;
-            "
-          >
-            Saya berpengalaman merancang antarmuka yang berpusat pada
-            pengguna menggunakan <strong>Figma</strong>, lalu
-            mengimplementasikannya menjadi aplikasi yang skalabel dengan
-            <strong>Laravel, Kotlin, dan PostgreSQL</strong>. Kombinasi ini
-            memungkinkan saya memimpin alur kerja kolaboratif yang
-            menghubungkan estetika front-end dengan integrasi sistem yang
-            solid di belakangnya.
-          </p>
-        </div>
-      </section>
-
-      <section id="experience">
-        <div class="section-header">
-          <span class="tag">Rekam Jejak</span>
-          <h2 class="section-title">Edukasi & Organisasi</h2>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem">
-          <div class="card">
-            <h4 style="color: var(--primary); margin-bottom: 1rem">
-              Pendidikan
-            </h4>
-            <h3 style="font-size: 1.1rem">Institut Teknologi Del</h3>
-            <p
-              class="muted"
-              style="font-size: 0.85rem; color: var(--text-muted)"
-            >
-              S1 Informatika | 2023 – 2027 (Diharapkan)
-            </p>
-          </div>
-          <div class="card">
-            <h4 style="color: var(--primary); margin-bottom: 1rem">
-              Pengalaman Terbaru
-            </h4>
-            <h3 style="font-size: 1.1rem">Staff Departemen Kominfo</h3>
-            <p
-              class="muted"
-              style="font-size: 0.85rem; color: var(--text-muted)"
-            >
-              IT Del | 2024 – Sekarang
-            </p>
-            <ul
-              style="
-                font-size: 0.85rem;
-                margin-top: 10px;
-                padding-left: 15px;
-                color: var(--text-muted);
-              "
-            >
-              <li>Mengelola konten media sosial dan desain visual di Figma.</li>
-              <li>
-                Berkolaborasi lintas departemen untuk mendukung program kerja
-                himpunan.
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects">
-        <div class="section-header">
-          <span class="tag">Karya Terpilih</span>
-          <h2 class="section-title">Studi Kasus Proyek</h2>
-        </div>
-        <div class="project-grid">
-          <div class="project-card">
-            <div class="card" style="padding: 1.5rem">
-              <div class="project-thumb">
-                <img src="./foto-project1.jpg" alt="Sistem Informasi SMK Negeri 3 Balige" />
-              </div>
-              <div class="project-info">
-                <span
-                  style="
-                    color: var(--primary);
-                    font-weight: 700;
-                    font-size: 0.8rem;
-                  "
-                  >2026</span
-                >
-                <h3>Sistem Informasi SMK Negeri 3 Balige</h3>
-                <p>
-                  Memimpin desain UI/UX dan berkolaborasi dalam pengembangan
-                  full-stack untuk sistem informasi sekolah yang terintegrasi.
-                </p>
-                <div class="tech-tags">
-                  <span>Figma</span><span>Vite</span><span>PostgreSQL</span
-                  ><span>SRS</span>
-                </div>
-              </div>
+            <div class="fig-caption">
+              <span><b>FIG. 01</b> — Reference Subject</span>
+              <span>Medan, ID</span>
             </div>
-          </div>
-          <div class="project-card">
-            <div class="card" style="padding: 1.5rem">
-              <div class="project-thumb">
-                <img src="./foto-project2.jpg" alt="Sistem Pengajuan Dana Seminar" />
-              </div>
-              <div class="project-info">
-                <span
-                  style="
-                    color: var(--primary);
-                    font-weight: 700;
-                    font-size: 0.8rem;
-                  "
-                  >2026</span
-                >
-                <h3>Sistem Pengajuan Dana Seminar</h3>
-                <p>
-                  Mendigitalisasi proses pengajuan dana seminar melalui alur
-                  kerja berbasis peran (role-based workflow) yang efisien.
-                </p>
-                <div class="tech-tags">
-                  <span>Laravel</span><span>Figma</span
-                  ><span>Integrasi API</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="card" style="padding: 1.5rem">
-              <div class="project-thumb">
-                <img src="./foto-project3.jpg" alt="Aplikasi Web Interaktif (PABWE)" />
-              </div>
-              <div class="project-info">
-                <span
-                  style="
-                    color: var(--primary);
-                    font-weight: 700;
-                    font-size: 0.8rem;
-                  "
-                  >2025</span
-                >
-                <h3>Aplikasi Web Interaktif (PABWE)</h3>
-                <p>
-                  Mengembangkan modul "Posts" yang dinamis dengan fokus pada
-                  manajemen konten yang mulus dan responsif.
-                </p>
-                <div class="tech-tags">
-                  <span>React.js</span><span>Bun</span
-                  ><span>State Management</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="project-card">
-            <div class="card" style="padding: 1.5rem">
-              <div class="project-thumb placeholder">🏠</div>
-              <div class="project-info">
-                <span
-                  style="
-                    color: var(--primary);
-                    font-weight: 700;
-                    font-size: 0.8rem;
-                  "
-                  >2025</span
-                >
-                <h3>SmartLiving Assistant</h3>
-                <p>
-                  Merancang prototipe rumah pintar yang inklusif, mendukung
-                  kontrol berbasis suara (voice) dan gestur (gesture).
-                </p>
-                <div class="tech-tags">
-                  <span>UX Research</span><span>Accessibility</span
-                  ><span>Figma</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <div class="section-header">
-          <span class="tag">Prestasi</span>
-          <h2 class="section-title">Pencapaian Nasional</h2>
-        </div>
-        <div class="achieve-list">
-          <div class="achieve-item card">
-            <div class="achieve-icon">🥇</div>
-            <div>
-              <h4 style="font-size: 1rem">Medali Emas OPSI</h4>
-              <p style="font-size: 0.8rem; color: var(--text-muted)">
-                Divisi Matematika | Februari 2026
-              </p>
-            </div>
-          </div>
-          <div class="achieve-item card">
-            <div class="achieve-icon">📝</div>
-            <div>
-              <h4 style="font-size: 1rem">Finalis Kompetisi Esai</h4>
-              <p style="font-size: 0.8rem; color: var(--text-muted)">
-                Kategori Teknologi | Februari 2026
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills">
-        <div class="section-header">
-          <span class="tag">Keahlian</span>
-          <h2 class="section-title">Teknologi & Kompetensi</h2>
-        </div>
-        <div class="skill-group">
-          <div class="skill-badge">🎨 Figma</div>
-          <div class="skill-badge">⚛️ React.js</div>
-          <div class="skill-badge">🐘 Laravel</div>
-          <div class="skill-badge">📱 Kotlin</div>
-          <div class="skill-badge">🗄️ PostgreSQL</div>
-          <div class="skill-badge">🐍 Python</div>
-          <div class="skill-badge">🔗 Postman API</div>
-          <div class="skill-badge">λ Haskell & C</div>
-          <div class="skill-badge">⚡ JavaScript</div>
-          <div class="skill-badge" style="border-color: var(--primary)">
-            🇬🇧 Bahasa Inggris (Intermediate)
           </div>
         </div>
       </section>
     </div>
 
-    <footer class="footer" id="contact">
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
       <div class="container">
-        <div class="contact-links">
-          <div class="contact-box">
-            <h4>Email</h4>
-            <p><a href="mailto:grcsania23@gmail.com">grcsania23@gmail.com</a></p>
-          </div>
-          <div class="contact-box">
-            <h4>Telepon</h4>
-            <p><a href="tel:+6283165299640">+62 831 6529 9640</a></p>
-          </div>
-          <div class="contact-box">
-            <h4>LinkedIn</h4>
+        <div class="section-head">
+          <span class="clause">§01</span>
+          <h2 class="section-title">Profil &amp; Pendidikan</h2>
+        </div>
+        <div class="about-grid reveal">
+          <div>
             <p>
-              <a
-                href="https://linkedin.com/in/gracesaniasilalahi"
-                target="_blank"
-                rel="noopener"
-                >gracesaniasilalahi</a
-              >
+              Saya berspesialisasi dalam analisis dokumentasi teknis, quality
+              assurance, dan pengembangan sistem. Terbiasa menerjemahkan
+              spesifikasi FSD/SRS yang kompleks untuk memastikan keselarasan
+              penuh antara arsitektur sistem dan eksekusi fungsionalnya di
+              lapangan.
+            </p>
+            <p>
+              Kemampuan analitis dan penalaran logis menjadi modal utama saya
+              dalam mengidentifikasi celah pada alur kerja (workflow
+              discrepancies), sekaligus mengawal siklus proyek dari perencanaan
+              hingga rilis — baik sebagai penguji, penulis dokumentasi, maupun
+              kontributor kode.
             </p>
           </div>
-          <div class="contact-box">
-            <h4>GitHub</h4>
-            <p>
-              <a
-                href="https://github.com/Gracesilalahi"
-                target="_blank"
-                rel="noopener"
-                >Gracesilalahi</a
-              >
-            </p>
+          <div class="card marks">
+            <dl class="field-list">
+              <div class="field-row">
+                <dt>Institusi</dt>
+                <dd>Institut Teknologi Del</dd>
+              </div>
+              <div class="field-row">
+                <dt>Program</dt>
+                <dd>S1 Informatika</dd>
+              </div>
+              <div class="field-row">
+                <dt>Periode</dt>
+                <dd>Agu 2023 – Sep 2027 (Perkiraan)</dd>
+              </div>
+              <div class="field-row">
+                <dt>IPK</dt>
+                <dd>3.32 / 4.00</dd>
+              </div>
+              <div class="field-row">
+                <dt>Mata Kuliah Relevan</dt>
+                <dd>
+                  Database Systems (SQL&nbsp;Server), OOP (C#/.NET), Mobile
+                  Programming (Flutter), Software Engineering (FSD/SRS)
+                </dd>
+              </div>
+              <div class="field-row">
+                <dt>Lokasi</dt>
+                <dd>Medan, Indonesia</dd>
+              </div>
+            </dl>
           </div>
         </div>
-        <div class="copyright">
-          © 2026 Grace Sania Silalahi. Dibuat dengan dedikasi di Medan,
-          Indonesia.
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <span class="clause">§02</span>
+          <h2 class="section-title">Pengalaman Kerja &amp; Organisasi</h2>
+        </div>
+        <div class="log reveal">
+          <div class="log-entry is-current">
+            <div class="log-head">
+              <div>
+                <h3>Technical Writer &amp; Quality Assurance Intern</h3>
+                <div class="log-org">PT Jejaring Tiga Artha (Zicare)</div>
+              </div>
+              <div class="log-date">
+                <span class="status-tag status-active">Berjalan</span><br />
+                Juni 2026 – Sekarang
+              </div>
+            </div>
+            <div class="log-body">
+              <ul>
+                <li>
+                  Menjadi QA utama untuk proyek Help Desk MVP self-hosted,
+                  menyusun skenario uji demi memastikan komunikasi chatbot dua
+                  arah yang mulus antara klien rumah sakit dan agen.
+                </li>
+                <li>
+                  Mendukung tim beranggotakan 6 orang lintas fungsi di berbagai
+                  fase pengembangan, termasuk system integration testing
+                  menggunakan Chatwoot SDK, komponen front-end Vue.js v2, dan
+                  hashing backend PHP.
+                </li>
+                <li>
+                  Memvalidasi alur data-mapping otomatis (Name, Role, Hospital
+                  ID) untuk memastikan kredensial pengguna tersinkronisasi ke
+                  inbox support tanpa kesalahan manual.
+                </li>
+                <li>
+                  Berkolaborasi dalam sprint planning dan tugas R&amp;D untuk
+                  menyelesaikan hambatan deployment, memastikan MVP memenuhi
+                  kebutuhan produk dalam target 6 minggu.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="log-entry is-current">
+            <div class="log-head">
+              <div>
+                <h3>Staff Departemen Komunikasi &amp; Informasi</h3>
+                <div class="log-org">Institut Teknologi Del</div>
+              </div>
+              <div class="log-date">
+                <span class="status-tag status-active">Berjalan</span><br />
+                2024 – Sekarang
+              </div>
+            </div>
+            <div class="log-body">
+              <ul>
+                <li>
+                  Mendukung pengelolaan konten dan komunikasi informasi di
+                  lingkungan kampus secara berkelanjutan.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="log-entry">
+            <div class="log-head">
+              <div>
+                <h3>KPU Himasti</h3>
+                <div class="log-org">
+                  Himpunan Mahasiswa Sarjana Informatika — Institut Teknologi
+                  Del
+                </div>
+              </div>
+              <div class="log-date">
+                <span class="status-tag status-closed">Selesai</span><br />
+                Okt 2025 – Nov 2025
+              </div>
+            </div>
+            <div class="log-body">
+              <ul>
+                <li>
+                  Berpartisipasi dalam Komisi Pemilihan Umum internal himpunan
+                  mahasiswa untuk mengawal proses pemilihan yang tertib dan
+                  transparan.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <span class="clause">§03</span>
+          <h2 class="section-title">Proyek Terpilih</h2>
+        </div>
+        <p class="section-sub">5 studi kasus · Jan 2026 — Okt 2024</p>
+
+        <div class="project-list">
+          <!-- Project 1 -->
+          <article class="project-card card reveal">
+            <div class="project-media">
+              <span class="project-id">PRJ-01</span>
+              <img
+                src="./assets/foto-project1.jpg"
+                alt="Tampilan Sistem Informasi SMK Negeri 3 Balige"
+              />
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h3>Sistem Informasi SMK Negeri 3 Balige</h3>
+                <span class="project-date">Jan – Mei 2026</span>
+              </div>
+              <div class="project-role">
+                Full-Stack Contributor &amp; UI/UX Designer
+              </div>
+              <ul>
+                <li>
+                  Merancang antarmuka berpusat pada pengguna hingga implementasi
+                  fitur end-to-end untuk sistem informasi sekolah yang
+                  komprehensif.
+                </li>
+                <li>
+                  Menerjemahkan prototipe Figma interaktif menjadi aplikasi web
+                  responsif dengan Vite dan aplikasi mobile dengan Android
+                  Studio, menjaga alur pengguna tetap mulus di berbagai peran
+                  (admin, guru, siswa).
+                </li>
+                <li>
+                  Turut membangun logika backend dan arsitektur basis data
+                  dengan PostgreSQL/MySQL untuk penanganan data yang aman dan
+                  query performa tinggi.
+                </li>
+                <li>
+                  Menulis SRS, merancang Use Case &amp; ERD, dan aktif dalam
+                  sprint planning untuk menjembatani konsep desain dengan
+                  eksekusi teknis.
+                </li>
+              </ul>
+              <div class="stack-row">
+                <span class="stack-tag">Laravel</span>
+                <span class="stack-tag">Flutter</span>
+                <span class="stack-tag">PostgreSQL</span>
+                <span class="stack-tag">Docker</span>
+                <span class="stack-tag">Maestro</span>
+              </div>
+              <div class="repo-row">
+                <span class="repo-tag">Repo · Mobile (Flutter)</span>
+                <span class="repo-tag">Repo · Backend (Laravel)</span>
+                <span class="repo-tag">Repo · Frontend Web</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="project-card card reveal">
+            <div class="project-media">
+              <span class="project-id">PRJ-02</span>
+              <img
+                src="./assets/foto-project2.jpg"
+                alt="Tampilan Sistem Pengajuan Dana Seminar"
+              />
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h3>Seminar Registration Funding Request System</h3>
+                <span class="project-date">Okt – Des 2025</span>
+              </div>
+              <div class="project-role">Web Developer</div>
+              <ul>
+                <li>
+                  Merancang dan membangun platform berbasis web untuk
+                  mengotomasi proses pengajuan dana seminar, menjembatani tata
+                  letak antarmuka yang intuitif dengan fitur end-to-end yang
+                  solid.
+                </li>
+                <li>
+                  Mengimplementasikan notifikasi sistem otomatis dan pembaruan
+                  status real-time di sepanjang siklus pendanaan untuk
+                  mempercepat pelacakan dokumen multi-tahap.
+                </li>
+                <li>
+                  Membangun modul manajemen dokumen yang aman untuk unggahan
+                  berbagai format, log umpan balik peer-review, dan pembuatan
+                  surat izin otomatis.
+                </li>
+                <li>
+                  Menyusun arsitektur alur kerja berbasis peran yang kompleks
+                  untuk Dosen, Peer Reviewer, LPPM, Finance, dan HR, lengkap
+                  dengan validasi data dan transisi status yang aman.
+                </li>
+              </ul>
+              <div class="stack-row">
+                <span class="stack-tag">Laravel</span>
+                <span class="stack-tag">Blade</span>
+                <span class="stack-tag">Bootstrap</span>
+                <span class="stack-tag">PostgreSQL</span>
+              </div>
+              <div class="repo-row">
+                <span class="repo-tag">Repo · Web App</span>
+                <span class="repo-tag">Repo · Models</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="project-card card reveal">
+            <div class="project-media">
+              <span class="project-id">PRJ-03</span>
+              <img
+                src="./assets/foto-project3.jpg"
+                alt="Tampilan Aplikasi Web Interaktif PABWE"
+              />
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h3>Interactive Web Application — PABWE Project</h3>
+                <span class="project-date">Sep – Okt 2025</span>
+              </div>
+              <div class="project-role">
+                Front-End Developer (Modul "Posts")
+              </div>
+              <ul>
+                <li>
+                  Memimpin pengembangan modul "Posts" pada aplikasi web dinamis,
+                  berfokus pada pengalaman manajemen konten yang mulus bagi
+                  pengguna.
+                </li>
+                <li>
+                  Membangun antarmuka front-end responsif dengan React.js dan
+                  Bun, termasuk fitur membuat, melihat, dan mengelola post
+                  interaktif dengan rendering yang optimal.
+                </li>
+                <li>
+                  Merancang alur data untuk sistem pesan dan posting agar
+                  konsisten secara real-time antara input pengguna dan state
+                  aplikasi.
+                </li>
+                <li>
+                  Berkolaborasi dalam integrasi API untuk penanganan data
+                  asinkron, memungkinkan penyimpanan dan pengambilan konten
+                  pengguna secara efisien.
+                </li>
+              </ul>
+              <div class="stack-row">
+                <span class="stack-tag">React JS</span>
+                <span class="stack-tag">Bun</span>
+                <span class="stack-tag">Tailwind CSS</span>
+              </div>
+              <div class="repo-row">
+                <span class="repo-tag">Repo · Web App</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="project-card card reveal">
+            <div class="project-media">
+              <span class="project-id">PRJ-04</span>
+              <img
+                src="./assets/foto-project4.jpg"
+                alt="Prototipe UI/UX SmartLiving Assistant"
+              />
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h3>SmartLiving Assistant</h3>
+                <span class="project-date">Mei 2025</span>
+              </div>
+              <div class="project-role">UI/UX Designer</div>
+              <ul>
+                <li>
+                  Merancang prototipe UI/UX high-fidelity di Figma untuk sistem
+                  smart home inklusif yang mendukung interaksi suara, gestur,
+                  dan sentuhan.
+                </li>
+                <li>
+                  Membuat flowchart sistem yang mendetail untuk
+                  memvisualisasikan perjalanan pengguna multimodal dan logika
+                  otomasi.
+                </li>
+                <li>
+                  Menerapkan prinsip desain inti seperti Visual Hierarchy dan
+                  Accessibility agar sistem dapat digunakan oleh lansia dan
+                  penyandang disabilitas.
+                </li>
+              </ul>
+              <div class="stack-row">
+                <span class="stack-tag">Figma</span>
+                <span class="stack-tag">Draw.io</span>
+                <span class="stack-tag">HCI Principles</span>
+              </div>
+              <div class="repo-row">
+                <span class="repo-tag">Repo · Desain Figma</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="project-card card reveal">
+            <div class="project-media">
+              <span class="project-id">PRJ-05</span>
+              <svg
+                viewBox="0 0 400 300"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Ilustrasi skema ERD RPS Curriculum Database"
+              >
+                <rect width="400" height="300" fill="#182645" />
+                <g fill="none" stroke="#f1e2cb" stroke-width="1" opacity="0.6">
+                  <rect x="35" y="45" width="95" height="60" rx="2" />
+                  <rect x="255" y="45" width="95" height="60" rx="2" />
+                  <rect x="35" y="195" width="95" height="60" rx="2" />
+                  <rect x="255" y="195" width="95" height="60" rx="2" />
+                  <rect x="145" y="120" width="95" height="60" rx="2" />
+                </g>
+                <g stroke="#c97a2b" stroke-width="1" opacity="0.8">
+                  <line x1="130" y1="75" x2="192" y2="130" />
+                  <line x1="255" y1="75" x2="215" y2="130" />
+                  <line x1="130" y1="225" x2="192" y2="170" />
+                  <line x1="255" y1="225" x2="215" y2="170" />
+                </g>
+                <g
+                  fill="#f1efe6"
+                  font-family="IBM Plex Mono, monospace"
+                  font-size="9"
+                >
+                  <text x="82" y="78" text-anchor="middle">mahasiswa</text>
+                  <text x="302" y="78" text-anchor="middle">dosen</text>
+                  <text x="82" y="228" text-anchor="middle">kurikulum</text>
+                  <text x="302" y="228" text-anchor="middle">nilai</text>
+                  <text x="192" y="153" text-anchor="middle" fill="#c97a2b">
+                    rps
+                  </text>
+                </g>
+              </svg>
+            </div>
+            <div class="project-body">
+              <div class="project-top">
+                <h3>RPS Curriculum Database</h3>
+                <span class="project-date">Okt – Des 2024</span>
+              </div>
+              <div class="project-role">Database Designer</div>
+              <ul>
+                <li>
+                  Merancang basis data akademik yang ternormalisasi penuh (3NF)
+                  dengan 15+ tabel, lengkap dengan model ERD, CDM, dan PDM untuk
+                  menjaga integritas relasional yang ketat.
+                </li>
+                <li>
+                  Membangun kueri SQL lanjutan (multi-table JOIN, subquery,
+                  fungsi agregat) serta membuat 2 Stored Procedure &amp; 2
+                  Function untuk mengotomasi logika bisnis yang kompleks.
+                </li>
+                <li>
+                  Mengoptimalkan performa basis data melalui query execution
+                  planning, menunjukkan fundamental SQL yang kuat dan relevan
+                  dengan SQL Server (SSMS) serta lingkungan C#/.NET.
+                </li>
+              </ul>
+              <div class="stack-row">
+                <span class="stack-tag">PostgreSQL</span>
+                <span class="stack-tag">PowerDesigner</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <span class="clause">§04</span>
+          <h2 class="section-title">Keahlian &amp; Bahasa</h2>
+        </div>
+        <div class="skills-grid reveal">
+          <div class="skill-block">
+            <div class="skill-block-head">Mobile &amp; IDE</div>
+            <div class="skill-block-body">
+              <span class="skill-chip">Flutter (Dart)</span>
+              <span class="skill-chip">Android Studio</span>
+              <span class="skill-chip">Visual Studio Code</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-block-head">Backend &amp; Desktop</div>
+            <div class="skill-block-body">
+              <span class="skill-chip">C# (.NET Framework/Core)</span>
+              <span class="skill-chip">Visual Studio</span>
+              <span class="skill-chip">Laravel (PHP)</span>
+              <span class="skill-chip">C</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-block-head">Databases</div>
+            <div class="skill-block-body">
+              <span class="skill-chip">SQL Server (SSMS)</span>
+              <span class="skill-chip"
+                >Stored Procedures &amp; Query Optimization</span
+              >
+              <span class="skill-chip">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="skill-block">
+            <div class="skill-block-head">Tools &amp; Methodologies</div>
+            <div class="skill-block-body">
+              <span class="skill-chip">Microsoft Excel</span>
+              <span class="skill-chip">Microsoft PowerPoint</span>
+              <span class="skill-chip">FSD/SRS Analysis</span>
+              <span class="skill-chip">UAT Testing</span>
+              <span class="skill-chip">Postman API</span>
+              <span class="skill-chip">Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card marks reveal" style="margin-top: 1.4rem">
+          <div class="skill-block-head" style="margin: -1.9rem -1.9rem 1.2rem">
+            Bahasa
+          </div>
+          <div class="lang-row">
+            <span>Bahasa Indonesia</span>
+            <span style="display: flex; align-items: center; gap: 10px">
+              <span class="lang-bar"><span style="width: 100%"></span></span>
+              <span class="project-date" style="padding-top: 0">Native</span>
+            </span>
+          </div>
+          <div class="lang-row">
+            <span>English</span>
+            <span style="display: flex; align-items: center; gap: 10px">
+              <span class="lang-bar"><span style="width: 60%"></span></span>
+              <span class="project-date" style="padding-top: 0"
+                >Intermediate</span
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ACHIEVEMENTS ============ -->
+    <section id="achievements">
+      <div class="container">
+        <div class="section-head">
+          <span class="clause">§05</span>
+          <h2 class="section-title">Prestasi</h2>
+        </div>
+        <div class="achieve-card card marks reveal">
+          <div class="achieve-emblem">BEC</div>
+          <div>
+            <div class="achieve-title">Bandung Essay Competition 3 (BEC 3)</div>
+            <div class="achieve-meta">Kategori Teknologi · April 2026</div>
+            <div class="medal-row">
+              <span class="medal silver">🥈 Silver Medalist</span>
+              <span class="medal bronze">🥉 Bronze Medalist</span>
+              <span class="medal fav">⭐ "Favorite Poster" Winner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER / CONTACT ============ -->
+    <footer id="contact">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <div class="footer-title">Mari <em>berkolaborasi.</em></div>
+            <p class="footer-lede">
+              Terbuka untuk peluang magang, kolaborasi proyek, maupun diskusi
+              seputar quality assurance, dokumentasi teknis, dan pengembangan
+              sistem.
+            </p>
+          </div>
+          <div class="contact-links">
+            <div class="contact-box">
+              <h4>Email</h4>
+              <p>
+                <a href="mailto:gracesania9@gmail.com">gracesania9@gmail.com</a>
+              </p>
+            </div>
+            <div class="contact-box">
+              <h4>Telepon</h4>
+              <p><a href="tel:+6283165299640">+62 831 6529 9640</a></p>
+            </div>
+            <div class="contact-box">
+              <h4>LinkedIn</h4>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/gracesaniasilalahi"
+                  target="_blank"
+                  rel="noopener"
+                  >gracesaniasilalahi</a
+                >
+              </p>
+            </div>
+            <div class="contact-box">
+              <h4>GitHub</h4>
+              <p>
+                <a
+                  href="https://github.com/Gracesilalahi"
+                  target="_blank"
+                  rel="noopener"
+                  >Gracesilalahi</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span
+            >© <span id="year">2026</span> Grace Sania Silalahi · Medan,
+            Indonesia · End of Document</span
+          >
+          <a href="#" class="back-top">↑ Kembali ke atas</a>
         </div>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
