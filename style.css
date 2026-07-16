@@ -115,46 +115,6 @@ img {
 }
 
 /* ============================================================
-   DOCUMENT METADATA BAR
-   ============================================================ */
-.docbar {
-  background: var(--ink);
-  color: var(--paper-raised);
-  font-family: var(--f-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.03em;
-}
-.docbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-.docbar span {
-  opacity: 0.85;
-}
-.docbar .doc-id {
-  color: var(--accent);
-  font-weight: 600;
-  opacity: 1;
-}
-.docbar .doc-status {
-  color: var(--verify-soft);
-}
-.docbar .doc-status::before {
-  content: "●";
-  color: #5fbf9e;
-  margin-right: 5px;
-  font-size: 0.6rem;
-}
-.docbar .doc-hide-sm {
-  display: inline;
-}
-
-/* ============================================================
    NAV
    ============================================================ */
 nav {
@@ -197,10 +157,6 @@ nav {
 .nav-links a:hover,
 .nav-links a.active {
   color: var(--accent);
-}
-.nav-links a .num {
-  color: var(--ink-faint);
-  margin-right: 4px;
 }
 .nav-cta {
   border: 1px solid var(--ink);
@@ -363,15 +319,7 @@ section {
 .section-head {
   display: flex;
   align-items: baseline;
-  gap: 1rem;
   margin-bottom: 2.2rem;
-}
-.clause {
-  font-family: var(--f-mono);
-  font-size: 0.8rem;
-  color: var(--accent);
-  font-weight: 600;
-  flex-shrink: 0;
 }
 .section-title {
   font-family: var(--f-display);
@@ -385,7 +333,6 @@ section {
   color: var(--ink-faint);
   margin-top: -1.4rem;
   margin-bottom: 2rem;
-  padding-left: 2.6rem;
 }
 
 /* ---- Generic card ---- */
