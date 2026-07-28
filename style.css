@@ -602,6 +602,15 @@ section {
   border: 1px solid var(--line);
   padding: 3px 10px;
   border-radius: var(--radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+a.repo-tag:hover,
+a.repo-tag:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
 }
 
 /* ============================================================
