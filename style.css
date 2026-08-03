@@ -723,111 +723,185 @@ a.repo-tag:focus-visible {
 .medal.bronze { border-color: #b98a5e; color: #7a5433; background: #f3e6d8; }
 .medal.fav { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 
-/* ---- Certificate gallery ---- */
-.cert-sub {
-  margin-top: 1.6rem;
-  margin-bottom: 1rem;
-}
-.cert-grid {
+/* ---- Certificate exhibit gallery ---- */
+.cert-gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.2rem;
+  gap: 1.4rem;
+  margin-top: 1.4rem;
 }
-.cert-card {
+.cert-exhibit {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background: var(--paper-raised);
   border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 0;
   overflow: hidden;
   cursor: zoom-in;
+  text-align: left;
+  font-family: inherit;
+  color: inherit;
+  box-shadow: var(--shadow);
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
-.cert-card:hover {
-  transform: translateY(-3px);
+.cert-exhibit:hover,
+.cert-exhibit:focus-visible {
+  transform: translateY(-4px);
   border-color: var(--line-strong);
-  box-shadow: 0 10px 24px rgba(24, 38, 69, 0.12);
+  box-shadow: 0 14px 28px rgba(24, 38, 69, 0.14);
+  outline: none;
 }
-.cert-id {
+.cert-exhibit:hover .cert-zoom,
+.cert-exhibit:focus-visible .cert-zoom {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cert-tag {
   position: absolute;
   top: 10px;
   left: 10px;
   z-index: 2;
   font-family: var(--f-mono);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--paper-raised);
-  background: rgba(24, 38, 69, 0.6);
-  padding: 3px 8px;
-  letter-spacing: 0.04em;
-}
-.cert-media {
-  aspect-ratio: 4 / 2.83;
   background: var(--ink);
-  overflow: hidden;
+  padding: 3px 8px;
+  border-radius: 2px;
 }
-.cert-media img {
+.cert-ribbon {
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  z-index: 2;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.35));
+}
+.cert-exhibit img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1414 / 1000;
   object-fit: cover;
-  object-position: center top;
-  transition: transform 0.35s ease;
+  object-position: top;
+  border-bottom: 1px solid var(--line);
+  background: #dedbcd;
 }
-.cert-card:hover .cert-media img {
-  transform: scale(1.035);
+.cert-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0.85rem 1rem 1rem;
 }
-.cert-card figcaption {
-  padding: 0.95rem 1.1rem 1.1rem;
-  border-top: 1px dashed var(--line);
-}
-.cert-name {
-  display: block;
+.cert-caption b {
   font-family: var(--f-display);
-  font-weight: 600;
   font-size: 1rem;
-  margin-bottom: 0.3rem;
+  font-weight: 600;
 }
-.cert-no {
-  display: block;
+.cert-caption span:last-child {
   font-family: var(--f-mono);
-  font-size: 0.64rem;
+  font-size: 0.66rem;
   color: var(--ink-faint);
-  letter-spacing: 0.01em;
   word-break: break-word;
 }
+.cert-zoom {
+  position: absolute;
+  bottom: 0.85rem;
+  right: 1rem;
+  font-family: var(--f-mono);
+  font-size: 0.68rem;
+  color: var(--accent);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  background: var(--accent-soft);
+  padding: 3px 9px;
+  border-radius: 100px;
+}
 
-/* ---- Lightbox for certificates ---- */
-.lightbox {
+/* ---- Certificate lightbox ---- */
+.cert-lightbox {
   position: fixed;
   inset: 0;
-  z-index: 999;
-  background: rgba(15, 20, 34, 0.92);
-  display: none;
+  z-index: 200;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4vh 4vw;
+  padding: 2.5rem 1.25rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
 }
-.lightbox.is-open {
-  display: flex;
+.cert-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
 }
-.lightbox img {
-  max-width: 100%;
-  max-height: 92vh;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(241, 239, 230, 0.15);
-}
-.lightbox-close {
+.cert-lightbox-backdrop {
   position: absolute;
-  top: 22px;
-  right: 26px;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: 1px solid rgba(241, 239, 230, 0.35);
-  background: rgba(241, 239, 230, 0.08);
-  color: var(--paper-raised);
-  font-size: 1.1rem;
-  cursor: pointer;
+  inset: 0;
+  background: rgba(15, 20, 35, 0.86);
+  backdrop-filter: blur(2px);
 }
-.lightbox-close:hover {
-  background: rgba(241, 239, 230, 0.18);
+.cert-lightbox-frame {
+  position: relative;
+  z-index: 1;
+  max-width: min(880px, 92vw);
+  max-height: 90vh;
+  background: var(--paper-raised);
+  border-radius: var(--radius);
+  padding: 0.6rem 0.6rem 0;
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.96) translateY(8px);
+  transition: transform 0.25s ease;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+}
+.cert-lightbox.is-open .cert-lightbox-frame {
+  transform: scale(1) translateY(0);
+}
+.cert-lightbox-frame img {
+  max-height: 72vh;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 2px;
+  background: #dedbcd;
+}
+.cert-lightbox-frame figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.9rem 0.5rem 1rem;
+}
+.cert-lightbox-frame figcaption span:first-child {
+  font-family: var(--f-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.cert-lightbox-meta {
+  font-family: var(--f-mono);
+  font-size: 0.7rem;
+  color: var(--ink-faint);
+}
+.cert-lightbox-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--ink);
+  color: var(--paper-raised);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.cert-lightbox-close:hover {
+  background: var(--accent);
 }
 
 /* ============================================================
@@ -923,9 +997,6 @@ footer {
   .project-card {
     grid-template-columns: 1fr;
   }
-  .cert-grid {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 @media (max-width: 720px) {
@@ -958,13 +1029,13 @@ footer {
     text-align: center;
     justify-items: center;
   }
+  .cert-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 540px) {
   .contact-links {
-    grid-template-columns: 1fr;
-  }
-  .cert-grid {
     grid-template-columns: 1fr;
   }
 }

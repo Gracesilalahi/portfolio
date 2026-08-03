@@ -739,13 +739,15 @@
         <div class="section-head">
           <h2 class="section-title">Prestasi</h2>
         </div>
+        <p class="section-sub">3 sertifikat terverifikasi · Bandung, 11–12 April 2026</p>
+
         <div class="achieve-card card marks reveal">
           <div class="achieve-emblem">BEC</div>
           <div>
             <div class="achieve-title">Bandung Essay Competition 3 (BEC 3)</div>
             <div class="achieve-meta">
-              Diselenggarakan oleh RISKI &amp; Politeknik TEDC Bandung ·
-              Kategori Teknologi · Bandung, 11–12 April 2026
+              Diselenggarakan oleh RISKI &amp; Politeknik TEDC Bandung · Kategori
+              Teknologi · April 2026
             </div>
             <div class="medal-row">
               <span class="medal silver">🥈 Silver Medalist</span>
@@ -755,58 +757,85 @@
           </div>
         </div>
 
-        <p class="section-sub cert-sub">3 sertifikat terverifikasi</p>
-        <div class="cert-grid reveal">
-          <figure class="cert-card marks">
-            <span class="cert-id">CERT-01</span>
-            <div class="cert-media">
-              <img
-                src="./assets/sertifikat-favorite-poster.jpg"
-                alt="Sertifikat Favorite Poster — BEC 3, atas nama Grace Sania Silalahi"
-                loading="lazy"
-              />
-            </div>
-            <figcaption>
-              <span class="cert-name">⭐ Favorite Poster</span>
-              <span class="cert-no">No. 050/BEST-FAV/BEC3/RISKI-POLTEK.TEDC/IV/2026</span>
-            </figcaption>
-          </figure>
-          <figure class="cert-card marks">
-            <span class="cert-id">CERT-02</span>
-            <div class="cert-media">
-              <img
-                src="./assets/sertifikat-silver-medal.jpg"
-                alt="Sertifikat Silver Medal — BEC 3, atas nama Grace Sania Silalahi"
-                loading="lazy"
-              />
-            </div>
-            <figcaption>
-              <span class="cert-name">🥈 Silver Medal</span>
-              <span class="cert-no">No. 008/MHS/TEKN/BEC3/RISKI-POLTEK.TEDC/IV/2026</span>
-            </figcaption>
-          </figure>
-          <figure class="cert-card marks">
-            <span class="cert-id">CERT-03</span>
-            <div class="cert-media">
-              <img
-                src="./assets/sertifikat-bronze-medal.jpg"
-                alt="Sertifikat Bronze Medal — BEC 3, atas nama Grace Sania Silalahi"
-                loading="lazy"
-              />
-            </div>
-            <figcaption>
-              <span class="cert-name">🥉 Bronze Medal</span>
-              <span class="cert-no">No. 033/MHS/TEKN/BEC3/RISKI-POLTEK.TEDC/IV/2026</span>
-            </figcaption>
-          </figure>
+        <!-- ---- Certificate exhibit gallery ---- -->
+        <div class="cert-gallery reveal">
+          <button
+            type="button"
+            class="cert-exhibit marks"
+            data-full="./assets/certificates/cert-silver-medal.jpg"
+            data-title="Silver Medal — BEC 3"
+            data-meta="No. 008/MHS/TEKN/BEC3/RISKI-POLTEK.TEDC/IV/2026"
+          >
+            <span class="cert-tag">EXHIBIT A</span>
+            <span class="cert-ribbon silver">🥈</span>
+            <img
+              src="./assets/certificates/cert-silver-medal.jpg"
+              alt="Sertifikat Silver Medal — Bandung Essay Competition 3, atas nama Grace Sania Silalahi"
+              loading="lazy"
+            />
+            <span class="cert-caption">
+              <b>Silver Medal</b>
+              <span>No. 008/MHS/TEKN/BEC3/RISKI-POLTEK.TEDC/IV/2026</span>
+            </span>
+            <span class="cert-zoom">⤢ Perbesar</span>
+          </button>
+
+          <button
+            type="button"
+            class="cert-exhibit marks"
+            data-full="./assets/certificates/cert-bronze-medal.jpg"
+            data-title="Bronze Medal — BEC 3"
+            data-meta="No. 033/MHS/TEKN/BEC3/RISKI-POLTEK.TEDC/IV/2026"
+          >
+            <span class="cert-tag">EXHIBIT B</span>
+            <span class="cert-ribbon bronze">🥉</span>
+            <img
+              src="./assets/certificates/cert-bronze-medal.jpg"
+              alt="Sertifikat Bronze Medal — Bandung Essay Competition 3, atas nama Grace Sania Silalahi"
+              loading="lazy"
+            />
+            <span class="cert-caption">
+              <b>Bronze Medal</b>
+              <span>No. 033/MHS/TEKN/BEC3/RISKI-POLTEK.TEDC/IV/2026</span>
+            </span>
+            <span class="cert-zoom">⤢ Perbesar</span>
+          </button>
+
+          <button
+            type="button"
+            class="cert-exhibit marks"
+            data-full="./assets/certificates/cert-favorite-poster.jpg"
+            data-title="Favorite Poster — BEC 3"
+            data-meta="No. 050/BEST-FAV/BEC3/RISKI-POLTEK.TEDC/IV/2026"
+          >
+            <span class="cert-tag">EXHIBIT C</span>
+            <span class="cert-ribbon fav">⭐</span>
+            <img
+              src="./assets/certificates/cert-favorite-poster.jpg"
+              alt="Sertifikat Favorite Poster — Bandung Essay Competition 3, atas nama Grace Sania Silalahi"
+              loading="lazy"
+            />
+            <span class="cert-caption">
+              <b>Favorite Poster</b>
+              <span>No. 050/BEST-FAV/BEC3/RISKI-POLTEK.TEDC/IV/2026</span>
+            </span>
+            <span class="cert-zoom">⤢ Perbesar</span>
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- ============ CERT LIGHTBOX ============ -->
-    <div class="lightbox" id="lightbox">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Tutup">✕</button>
-      <img id="lightboxImg" src="" alt="" />
+    <!-- ---- Certificate lightbox (populated via script.js) ---- -->
+    <div class="cert-lightbox" id="certLightbox" aria-hidden="true">
+      <div class="cert-lightbox-backdrop" data-close></div>
+      <figure class="cert-lightbox-frame">
+        <button type="button" class="cert-lightbox-close" data-close aria-label="Tutup">✕</button>
+        <img src="" alt="" id="certLightboxImg" />
+        <figcaption>
+          <span id="certLightboxTitle"></span>
+          <span id="certLightboxMeta" class="cert-lightbox-meta"></span>
+        </figcaption>
+      </figure>
     </div>
 
     <!-- ============ FOOTER / CONTACT ============ -->

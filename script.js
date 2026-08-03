@@ -56,36 +56,45 @@ document.addEventListener("DOMContentLoaded", () => {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   /* ---------- Certificate lightbox ---------- */
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  const lightboxClose = document.getElementById("lightboxClose");
-  const certCards = document.querySelectorAll(".cert-card");
+  const lightbox = document.getElementById("certLightbox");
+  const lightboxImg = document.getElementById("certLightboxImg");
+  const lightboxTitle = document.getElementById("certLightboxTitle");
+  const lightboxMeta = document.getElementById("certLightboxMeta");
+  const exhibits = document.querySelectorAll(".cert-exhibit");
+  let lastFocused = null;
 
-  const openLightbox = (src, alt) => {
-    if (!lightbox || !lightboxImg) return;
-    lightboxImg.src = src;
-    lightboxImg.alt = alt || "";
+  function openLightbox(btn) {
+    const full = btn.getAttribute("data-full");
+    const title = btn.getAttribute("data-title");
+    const meta = btn.getAttribute("data-meta");
+    lightboxImg.src = full;
+    lightboxImg.alt = title;
+    lightboxTitle.textContent = title;
+    lightboxMeta.textContent = meta;
     lightbox.classList.add("is-open");
+    lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-  };
-  const closeLightbox = () => {
-    if (!lightbox) return;
-    lightbox.classList.remove("is-open");
-    document.body.style.overflow = "";
-  };
+    lastFocused = btn;
+  }
 
-  certCards.forEach((card) => {
-    const img = card.querySelector("img");
-    if (!img) return;
-    card.addEventListener("click", () => openLightbox(img.src, img.alt));
-  });
-  if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
-  if (lightbox) {
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) closeLightbox();
+  function closeLightbox() {
+    lightbox.classList.remove("is-open");
+    lightbox.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+    if (lastFocused) lastFocused.focus();
+  }
+
+  if (lightbox && exhibits.length) {
+    exhibits.forEach((btn) => {
+      btn.addEventListener("click", () => openLightbox(btn));
+    });
+    lightbox.querySelectorAll("[data-close]").forEach((el) =>
+      el.addEventListener("click", closeLightbox)
+    );
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+        closeLightbox();
+      }
     });
   }
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeLightbox();
-  });
 });
