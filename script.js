@@ -55,26 +55,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Certificate lightbox ---------- */
+  /* ---------- Shared image lightbox (certificates + project screenshots) ---------- */
   const lightbox = document.getElementById("certLightbox");
   const lightboxImg = document.getElementById("certLightboxImg");
   const lightboxTitle = document.getElementById("certLightboxTitle");
   const lightboxMeta = document.getElementById("certLightboxMeta");
-  const exhibits = document.querySelectorAll(".cert-exhibit");
   let lastFocused = null;
 
-  function openLightbox(btn) {
-    const full = btn.getAttribute("data-full");
-    const title = btn.getAttribute("data-title");
-    const meta = btn.getAttribute("data-meta");
+  function openLightbox({ full, title, meta, trigger }) {
     lightboxImg.src = full;
-    lightboxImg.alt = title;
-    lightboxTitle.textContent = title;
-    lightboxMeta.textContent = meta;
+    lightboxImg.alt = title || "";
+    lightboxTitle.textContent = title || "";
+    lightboxMeta.textContent = meta || "";
     lightbox.classList.add("is-open");
     lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    lastFocused = btn;
+    lastFocused = trigger || null;
   }
 
   function closeLightbox() {
@@ -84,10 +80,51 @@ document.addEventListener("DOMContentLoaded", () => {
     if (lastFocused) lastFocused.focus();
   }
 
-  if (lightbox && exhibits.length) {
-    exhibits.forEach((btn) => {
-      btn.addEventListener("click", () => openLightbox(btn));
+  if (lightbox) {
+    /* Certificate exhibits (Prestasi section) */
+    document.querySelectorAll(".cert-exhibit").forEach((btn) => {
+      btn.addEventListener("click", () =>
+        openLightbox({
+          full: btn.getAttribute("data-full"),
+          title: btn.getAttribute("data-title"),
+          meta: btn.getAttribute("data-meta"),
+          trigger: btn,
+        })
+      );
     });
+
+    /* Project screenshots (Proyek section) — only ones with a real photo */
+    document.querySelectorAll(".project-media").forEach((media) => {
+      const img = media.querySelector("img");
+      if (!img) return; // skip decorative SVG illustrations (no real screenshot)
+
+      media.classList.add("zoomable");
+      media.setAttribute("role", "button");
+      media.setAttribute("tabindex", "0");
+      media.setAttribute("aria-label", `Perbesar tangkapan layar: ${img.alt}`);
+
+      const card = media.closest(".project-card");
+      const title = card?.querySelector(".project-top h3")?.textContent?.trim() || img.alt;
+      const date = card?.querySelector(".project-date")?.textContent?.trim() || "";
+
+      const hint = document.createElement("span");
+      hint.className = "cert-zoom media-zoom-hint";
+      hint.textContent = "⤢ Perbesar";
+      hint.setAttribute("aria-hidden", "true");
+      media.appendChild(hint);
+
+      const trigger = () =>
+        openLightbox({ full: img.currentSrc || img.src, title, meta: date, trigger: media });
+
+      media.addEventListener("click", trigger);
+      media.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          trigger();
+        }
+      });
+    });
+
     lightbox.querySelectorAll("[data-close]").forEach((el) =>
       el.addEventListener("click", closeLightbox)
     );
